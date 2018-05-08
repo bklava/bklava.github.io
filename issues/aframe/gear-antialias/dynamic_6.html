@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script>
+        function buildScene() {
+            let scene = document.createElement('a-scene');
+            scene.setAttribute('antialias', 'true');
+            document.body.appendChild(scene);
+
+            let box = document.createElement('a-box');
+            box.setAttribute('position', '-1 0.5 -3');
+            box.setAttribute('rotation', '0 45 0');
+            box.setAttribute('color', '#4CC3D9');
+            box.setAttribute('shadow', '');
+            scene.appendChild(box);
+
+            let sphere = document.createElement('a-sphere');
+            sphere.setAttribute('position', '0 1.25 -5');
+            sphere.setAttribute('radius', '1.25');
+            sphere.setAttribute('color', '#EF2D5E');
+            sphere.setAttribute('shadow', '');
+            scene.appendChild(sphere);
+
+            let cylinder = document.createElement('a-cylinder');
+            cylinder.setAttribute('position', '1 0.75 -3');
+            cylinder.setAttribute('radius', '0.5');
+            cylinder.setAttribute('height', '1.5');
+            cylinder.setAttribute('color', '#FFC65D');
+            cylinder.setAttribute('shadow', '');
+            scene.appendChild(cylinder);
+
+            let plane = document.createElement('a-plane');
+            plane.setAttribute('position', '0 0 -4');
+            plane.setAttribute('rotation', '-90 0 0');
+            plane.setAttribute('width', '4');
+            plane.setAttribute('height', '4');
+            plane.setAttribute('color', '#7BC8A4');
+            plane.setAttribute('shadow', '');
+            scene.appendChild(plane);
+
+            let sky = document.createElement('a-sky');
+            sky.setAttribute('color', '#ECECEC');
+            scene.appendChild(sky);
+        }
+    </script>
+</head>
+
+<body onload="buildScene()">
+</body>
+
+</html>
