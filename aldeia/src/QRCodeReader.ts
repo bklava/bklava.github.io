@@ -3,7 +3,6 @@
 import QrCodeDetector = require('jsqr');
 import Messages from './Messages'
 
-
 declare class OverconstrainedError {
 
 }
@@ -162,7 +161,11 @@ export default class QRCodeReader {
     }
 
     private error(e) {
-        const errorMessage = document.createElement('div')
+        const icon = document.createElement('i');
+        icon.setAttribute('class', 'fa fa-warning error');
+        this.widget.appendChild(icon);
+
+        const errorMessage = document.createElement('div');
         errorMessage.setAttribute('class', 'error');
         errorMessage.textContent = e;
         this.widget.appendChild(errorMessage);
